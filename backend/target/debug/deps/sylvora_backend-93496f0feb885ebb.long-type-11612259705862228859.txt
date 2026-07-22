@@ -1,2 +1,0 @@
-fn({type error}, axum::Json<CreateUserRequest>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {create_admin_account}
-fn({type error}, axum::Json<CreateUserRequest>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {create_admin_account}: Handler<_, _>
