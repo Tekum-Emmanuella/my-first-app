@@ -1,0 +1,14 @@
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/thiserror-488ab39de5f33aad.d: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/lib.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/aserror.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/display.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/var.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/private.rs /home/emmanuella/hope/my-first-app/backend/target/debug/build/thiserror-fa122f47e95a6be8/out/private.rs
+
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/libthiserror-488ab39de5f33aad.rlib: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/lib.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/aserror.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/display.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/var.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/private.rs /home/emmanuella/hope/my-first-app/backend/target/debug/build/thiserror-fa122f47e95a6be8/out/private.rs
+
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/libthiserror-488ab39de5f33aad.rmeta: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/lib.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/aserror.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/display.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/var.rs /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/private.rs /home/emmanuella/hope/my-first-app/backend/target/debug/build/thiserror-fa122f47e95a6be8/out/private.rs
+
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/lib.rs:
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/aserror.rs:
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/display.rs:
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/var.rs:
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.19/src/private.rs:
+/home/emmanuella/hope/my-first-app/backend/target/debug/build/thiserror-fa122f47e95a6be8/out/private.rs:
+
+# env-dep:OUT_DIR=/home/emmanuella/hope/my-first-app/backend/target/debug/build/thiserror-fa122f47e95a6be8/out

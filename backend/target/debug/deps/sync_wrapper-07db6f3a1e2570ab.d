@@ -1,0 +1,7 @@
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/sync_wrapper-07db6f3a1e2570ab.d: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sync_wrapper-1.0.2/src/lib.rs
+
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/libsync_wrapper-07db6f3a1e2570ab.rlib: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sync_wrapper-1.0.2/src/lib.rs
+
+/home/emmanuella/hope/my-first-app/backend/target/debug/deps/libsync_wrapper-07db6f3a1e2570ab.rmeta: /home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sync_wrapper-1.0.2/src/lib.rs
+
+/home/emmanuella/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sync_wrapper-1.0.2/src/lib.rs:

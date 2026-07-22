@@ -1,0 +1,2 @@
+fn({type error}, axum::extract::Path<i64>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {delete_product}
+fn({type error}, axum::extract::Path<i64>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {delete_product}: Handler<_, _>

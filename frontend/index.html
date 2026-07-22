@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYLVORA | Luxury Fashion & Couture</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="ann-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <span>Free Shipping on orders over 50,000 XAF</span>
+    </div>
+    <div class="ann-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <span>New Styles Added – Shop Now</span>
+    </div>
+    <div class="ann-item">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      <span>30-Day Easy Returns</span>
+    </div>
+  </div>
+
+  <!-- Navbar Header -->
+  <header class="navbar">
+    <a href="index.html" class="brand-logo">
+      <svg class="logo-emblem" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="44" stroke="#C5A059" stroke-width="1.5" stroke-dasharray="220 60"/>
+        <path d="M28 32 C 34 26, 40 28, 42 32 C 40 40, 32 44, 38 65 C 44 80, 52 50, 48 38" stroke="#1A1A1A" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M42 42 L52 70 L68 38" stroke="#C5A059" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-main">SYLVORA</span>
+        <div class="logo-sub-wrap">
+          <span class="line"></span>
+          <span class="logo-sub">F A S H I O N</span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#hero" class="active">HOME</a>
+      <a href="#catalog" onclick="selectCategory('ALL')">SHOP</a>
+      <a href="#categories">COLLECTIONS</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#reviews">REVIEWS</a>
+      <a href="admin.html">SELLER PORTAL</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="search-container">
+        <button onclick="toggleSearchInput()" class="icon-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <input type="text" id="search-input" class="search-input hidden" placeholder="Search Sylvora..." onkeyup="filterCatalog()">
+      </div>
+
+      <div class="user-menu-wrap">
+        <button onclick="handleUserIconClick()" class="icon-btn" id="user-auth-btn" aria-label="Account">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </button>
+
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <p id="user-dropdown-name">Logged in</p>
+          <p id="user-dropdown-email" class="user-subtext">email@domain.com</p>
+          <hr>
+          <button onclick="signOutUser()" class="btn-signout">🚪 Sign Out</button>
+        </div>
+      </div>
+
+      <button onclick="toggleCartDrawer()" class="icon-btn cart-btn" aria-label="Bag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge" id="cart-count">0</span>
+      </button>
+
+      <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <button class="slider-arrow arrow-left" onclick="moveSlide(-1)">‹</button>
+
+    <div class="hero-content-wrap">
+      <div class="hero-text-container">
+        <span class="sub-heading" id="hero-subtitle">DISCOVER YOUR STYLE</span>
+        <h1 class="hero-title" id="hero-title">Elevate Your Everyday</h1>
+        <p class="hero-description" id="hero-desc">Timeless fashion pieces crafted for confidence, comfort and effortless style.</p>
+        <div class="hero-cta-group">
+          <a href="#catalog" onclick="selectCategory('WOMEN')" class="btn-primary">SHOP WOMEN</a>
+          <a href="#categories" class="btn-secondary">EXPLORE COLLECTIONS</a>
+        </div>
+      </div>
+      <div class="hero-image-box">
+        <img id="hero-img" src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=1000&auto=format&fit=crop" alt="Sylvora Fashion Model">
+      </div>
+    </div>
+
+    <button class="slider-arrow arrow-right" onclick="moveSlide(1)">›</button>
+
+    <div class="slider-dots">
+      <span class="dot active" onclick="setSlide(0)"></span>
+      <span class="dot" onclick="setSlide(1)"></span>
+      <span class="dot" onclick="setSlide(2)"></span>
+      <span class="dot" onclick="setSlide(3)"></span>
+    </div>
+  </section>
+
+  <!-- Value Bar -->
+  <section id="features" class="value-bar">
+    <div class="value-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      <div>
+        <h4>FREE SHIPPING</h4>
+        <p>On orders over 50,000 XAF</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+      <div>
+        <h4>EASY RETURNS</h4>
+        <p>30-day return policy</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div>
+        <h4>SECURE PAYMENT</h4>
+        <p>100% secure checkout</p>
+      </div>
+    </div>
+    <div class="value-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+      <div>
+        <h4>CUSTOMER SUPPORT</h4>
+        <p>We're here to help</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Grid (5 Categories including CHILDREN) -->
+  <section id="categories" class="categories-section">
+    <div class="section-title-wrap">
+      <h2>SHOP BY CATEGORY</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="categories-grid">
+      <div class="category-card" onclick="selectCategory('WOMEN')">
+        <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=600&auto=format&fit=crop" alt="Women">
+        <div class="cat-overlay">
+          <h3>WOMEN</h3>
+          <span class="cat-link">SHOP NOW</span>
+        </div>
+      </div>
+      <div class="category-card" onclick="selectCategory('MEN')">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop" alt="Men">
+        <div class="cat-overlay">
+          <h3>MEN</h3>
+          <span class="cat-link">SHOP NOW</span>
+        </div>
+      </div>
+      <div class="category-card" onclick="selectCategory('CHILDREN')">
+        <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?q=80&w=600&auto=format&fit=crop" alt="Children">
+        <div class="cat-overlay">
+          <h3>CHILDREN</h3>
+          <span class="cat-link">SHOP NOW</span>
+        </div>
+      </div>
+      <div class="category-card" onclick="selectCategory('ACCESSORIES')">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=600&auto=format&fit=crop" alt="Accessories">
+        <div class="cat-overlay">
+          <h3>ACCESSORIES</h3>
+          <span class="cat-link">SHOP NOW</span>
+        </div>
+      </div>
+      <div class="category-card" onclick="selectCategory('SHOES')">
+        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=600&auto=format&fit=crop" alt="Shoes">
+        <div class="cat-overlay">
+          <h3>SHOES</h3>
+          <span class="cat-link">SHOP NOW</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section id="catalog" class="catalog-section">
+    <div class="section-title-wrap">
+      <h2 id="catalog-title">FEATURED PRODUCTS</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="category-filter-bar">
+      <button class="cat-btn active" id="filter-ALL" onclick="selectCategory('ALL')">ALL PRODUCTS</button>
+      <button class="cat-btn" id="filter-WOMEN" onclick="selectCategory('WOMEN')">WOMEN</button>
+      <button class="cat-btn" id="filter-MEN" onclick="selectCategory('MEN')">MEN</button>
+      <button class="cat-btn" id="filter-CHILDREN" onclick="selectCategory('CHILDREN')">CHILDREN</button>
+      <button class="cat-btn" id="filter-ACCESSORIES" onclick="selectCategory('ACCESSORIES')">ACCESSORIES</button>
+      <button class="cat-btn" id="filter-SHOES" onclick="selectCategory('SHOES')">SHOES</button>
+    </div>
+
+    <div id="dress-catalog" class="grid">
+      <p class="loading-state">Loading Sylvora collection...</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <span class="sub-heading">THE SYLVORA HERITAGE</span>
+        <h2>Curated Couture & Artisanal Beauty</h2>
+        <p>Founded with a passion for luxury and modern elegance, SYLVORA brings together five curated fashion collections into one unified boutique experience. Every dress, suit, kids apparel, accessory, and footwear item is selected for superior quality, flattering silhouettes, and timeless charm.</p>
+        <p>We pride ourselves on direct stylist support, doorstep delivery across Cameroon, and seamless order placement via WhatsApp and Mobile Money.</p>
+      </div>
+      <div class="about-img-wrap">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=800&auto=format&fit=crop" alt="About Sylvora">
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews Section -->
+  <section id="reviews" class="reviews-section">
+    <div class="section-title-wrap">
+      <h2>CUSTOMER REVIEWS</h2>
+      <div class="gold-line"></div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"The dress fitting from Sylvora was absolutely perfect for my evening event in Douala! Fast delivery and great service."</p>
+        <span class="reviewer-name">— Marcelle T.</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"Quality fabrics and smooth communication on WhatsApp. Ordering from Sylvora was completely effortless!"</p>
+        <span class="reviewer-name">— Solange N.</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"I love that I can chat directly with the stylist on SYLVORA before ordering. 10/10 service."</p>
+        <span class="reviewer-name">— Vanessa M.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="newsletter-content">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to receive updates on Sylvora's latest collections and exclusive offers.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Sylvora!');">
+        <input type="email" placeholder="Enter your email address..." required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>SYLVORA FASHION</h3>
+        <p>Timeless fashion pieces crafted for confidence, comfort and effortless style.</p>
+      </div>
+      <div class="footer-col">
+        <h4>EXPLORE</h4>
+        <a href="#hero">Home</a>
+        <a href="#catalog" onclick="selectCategory('ALL')">Shop</a>
+        <a href="#categories">Collections</a>
+        <a href="#about">About Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>CUSTOMER SUPPORT</h4>
+        <a href="#chat-widget" onclick="openChat('General Support', 0, 'N/A', 'Sister')">Contact Us</a>
+        <a href="#features">30-Day Returns</a>
+        <a href="#features">Shipping Info</a>
+        <a href="admin.html">Seller Portal</a>
+      </div>
+      <div class="footer-col">
+        <h4>PAYMENTS ACCEPTED</h4>
+        <p style="font-size:0.85rem; color:#aaa;">MTN Mobile Money • Orange Money • Visa / Mastercard</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SYLVORA. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Auth Modal -->
+  <div id="auth-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeAuthModal()">✕</span>
+      <h2 id="auth-title">🔐 Sign In to Sylvora</h2>
+      <p style="color: var(--color-muted); font-size: 0.85rem; margin-bottom: 1.2rem;">You must have an account to place orders or initiate live styling chats.</p>
+      
+      <form id="auth-form">
+        <div class="form-group hidden" id="name-group">
+          <label>Full Name</label>
+          <input type="text" id="auth-name" placeholder="e.g. Marcelle T.">
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="auth-email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="auth-password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" id="auth-submit-btn" class="submit-btn">SIGN IN</button>
+      </form>
+
+      <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--color-muted);">
+        <span id="auth-toggle-msg">Don't have an account?</span>
+        <button onclick="toggleAuthMode()" style="background:none; border:none; color:var(--color-gold); font-weight:bold; cursor:pointer;" id="auth-toggle-btn">Create One</button>
+      </p>
+    </div>
+  </div>
+
+  <!-- Direct Native Payment Modal -->
+  <div id="payment-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closePaymentModal()">✕</span>
+      <h2>💳 Direct Native Payment</h2>
+      <p style="color: var(--color-muted); font-size: 0.85rem; margin-bottom: 1rem;">Complete order directly on SYLVORA platform via Mobile Money.</p>
+
+      <div class="form-group">
+        <label>Select Payment Provider</label>
+        <select id="momo-provider">
+          <option value="MTN">MTN Mobile Money Cameroon</option>
+          <option value="ORANGE">Orange Money Cameroon</option>
+          <option value="CARD">Debit / Credit Card</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number / Account Number</label>
+        <input type="tel" id="momo-phone" placeholder="e.g. 670000000" required>
+      </div>
+
+      <div class="form-group">
+        <label>Amount to Charge</label>
+        <input type="text" id="momo-amount" readonly style="background:#f4f4f4; font-weight:bold;">
+      </div>
+
+      <button onclick="processNativePayment()" class="submit-btn" style="background:#10B981;">PAY & CONFIRM ORDER NOW</button>
+    </div>
+  </div>
+
+  <!-- Shopping Drawer -->
+  <div id="cart-drawer" class="cart-drawer hidden">
+    <div class="cart-drawer-header">
+      <h3>YOUR SHOPPING BAG</h3>
+      <button onclick="toggleCartDrawer()" class="close-btn">✕</button>
+    </div>
+    <div id="cart-drawer-body" class="cart-drawer-body">
+      <p style="text-align:center; padding: 20px; color:#888;">Your bag is empty.</p>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal:</span>
+        <strong id="cart-subtotal-price">0 XAF</strong>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <button onclick="checkoutCartWhatsApp()" class="submit-btn" style="background:#25D366;">📱 ORDER VIA WHATSAPP</button>
+        <button onclick="openPaymentModal()" class="submit-btn">💳 PAY DIRECTLY ON PLATFORM</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Chat Widget -->
+  <div id="chat-widget" class="chat-widget hidden">
+    <div class="chat-header">
+      <strong id="chat-header-title">Sylvora Styling Assistance</strong>
+      <button onclick="closeChat()" class="close-btn">✕</button>
+    </div>
+    <div id="chat-body" class="chat-body"></div>
+    <div class="chat-footer">
+      <input type="text" id="chat-input" placeholder="Inquire about sizing, fabric..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()" class="send-btn">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

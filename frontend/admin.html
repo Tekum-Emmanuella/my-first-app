@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYLVORA | Executive Atelier Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="sylvora-portal-body">
+
+  <header class="portal-header">
+    <a href="index.html" class="portal-logo">
+      <span class="logo-main">SYLVORA</span>
+      <span class="logo-tag">ATELIER EXECUTIVE PORTAL</span>
+    </a>
+    
+    <a href="index.html" class="portal-back-btn">
+      ← Return to Storefront
+    </a>
+  </header>
+
+  <div id="login-container" class="portal-auth-viewport">
+    <div class="portal-card-login">
+      <div class="portal-card-head">
+        <div class="gold-badge">RESTRICTED ACCESS</div>
+        <h2>Atelier Sign In</h2>
+        <p>Enter administrator credentials to manage Sylvora collections.</p>
+      </div>
+
+      <form id="admin-login-form" class="portal-form">
+        <div class="portal-field">
+          <label>Administrator Email</label>
+          <input type="email" id="admin-email" placeholder="admin@sylvora.com" required>
+        </div>
+
+        <div class="portal-field">
+          <label>Password</label>
+          <input type="password" id="admin-password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="portal-btn-gold">ACCESS COMMAND CENTER</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="seller-board" class="portal-dashboard hidden">
+    
+    <div class="dash-top-bar">
+      <div>
+        <span class="sub-heading">BOUTIQUE MANAGEMENT</span>
+        <h1 id="board-title">Sylvora Command Center</h1>
+      </div>
+      <div class="dash-user-controls">
+        <span id="admin-user-badge" class="badge-role hidden">👑 Super Admin</span>
+        <button onclick="logoutAdmin()" class="portal-btn-outline-dark">SIGN OUT</button>
+      </div>
+    </div>
+
+    <div class="dash-metrics-grid">
+      <div class="metric-card">
+        <span class="metric-label">TOTAL PRODUCTS</span>
+        <strong class="metric-value" id="metric-total-count">0</strong>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">ACTIVE COLLECTIONS</span>
+        <strong class="metric-value">5 Categories</strong>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">CURRENCY REGION</span>
+        <strong class="metric-value" style="color:#C5A059;">XAF (Central Africa)</strong>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">SYSTEM STATUS</span>
+        <strong class="metric-value" style="color:#10B981;">🟢 Live Sync</strong>
+      </div>
+    </div>
+
+    <div class="dash-tab-bar">
+      <button class="dash-tab-btn active" id="tab-btn-inventory" onclick="switchDashTab('inventory')">📦 Inventory Feed</button>
+      <button class="dash-tab-btn" id="tab-btn-upload" onclick="switchDashTab('upload')">✨ Publish New Piece</button>
+      <button class="dash-tab-btn hidden" id="tab-btn-subadmin" onclick="switchDashTab('subadmin')">👑 Admin Privileges</button>
+    </div>
+
+    <section id="tab-content-inventory" class="dash-pane">
+      <div class="portal-card-workspace">
+        <div class="portal-card-head">
+          <h3>Current Boutique Collection</h3>
+          <p>Real-time item list fetched directly from your store database.</p>
+        </div>
+        <div id="seller-inventory" class="inventory-grid-wrap">
+          <p style="padding:20px; color:#888;">Loading catalog...</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-content-upload" class="dash-pane hidden">
+      <div class="portal-card-workspace">
+        <div class="portal-card-head">
+          <h3>Publish New Collection Piece</h3>
+          <p>Fill out details to immediately feature luxury apparel or accessories on the live store.</p>
+        </div>
+
+        <form id="upload-form" class="portal-form">
+          <div class="portal-grid-2">
+            <div class="portal-field">
+              <label>Piece Title / Name</label>
+              <input type="text" id="name" placeholder="e.g. Velvet Party Evening Dress" required>
+            </div>
+
+            <div class="portal-field">
+              <label>Price in XAF</label>
+              <input type="number" id="price" placeholder="e.g. 45000" required>
+            </div>
+          </div>
+
+          <div class="portal-grid-2">
+            <div class="portal-field">
+              <label>Available Sizes</label>
+              <input type="text" id="size" placeholder="e.g. S, M, L, XL" required>
+            </div>
+
+            <div class="portal-field">
+              <label>Media File (Photo / Video)</label>
+              <input type="file" id="media-file" accept="image/*,video/*" required>
+            </div>
+          </div>
+
+          <div class="portal-field">
+            <label>Assigned Categories (Check All That Apply)</label>
+            <div class="category-pills">
+              <label class="cat-pill"><input type="checkbox" name="cat" value="WOMEN" checked> Women</label>
+              <label class="cat-pill"><input type="checkbox" name="cat" value="MEN"> Men</label>
+              <label class="cat-pill"><input type="checkbox" name="cat" value="CHILDREN"> Children</label>
+              <label class="cat-pill"><input type="checkbox" name="cat" value="ACCESSORIES"> Accessories</label>
+              <label class="cat-pill"><input type="checkbox" name="cat" value="SHOES"> Shoes</label>
+            </div>
+          </div>
+
+          <button type="submit" id="submit-btn" class="portal-btn-dark">PUBLISH TO STOREFRONT</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-content-subadmin" class="dash-pane hidden">
+      <div class="portal-card-workspace border-gold">
+        <div class="portal-card-head">
+          <h3>Grant Sub-Admin Access</h3>
+          <p>Create secure manager accounts (Grace, Sarah, Bella) with Argon2-encrypted credentials.</p>
+        </div>
+
+        <form id="create-sub-admin-form" class="portal-form">
+          <div class="portal-grid-2">
+            <div class="portal-field">
+              <label>Manager Full Name</label>
+              <input type="text" id="sub-name" placeholder="e.g. Grace's Collection" required>
+            </div>
+
+            <div class="portal-field">
+              <label>Manager Email</label>
+              <input type="email" id="sub-email" placeholder="grace@sylvora.com" required>
+            </div>
+          </div>
+
+          <div class="portal-field">
+            <label>Secure Password</label>
+            <input type="password" id="sub-password" placeholder="Min. 8 characters" required>
+          </div>
+
+          <button type="submit" class="portal-btn-gold">CREATE SUB-ADMIN ACCOUNT</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

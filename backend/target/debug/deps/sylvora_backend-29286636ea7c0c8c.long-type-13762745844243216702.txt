@@ -1,0 +1,2 @@
+fn({type error}, axum::Json<Product>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {add_product}
+fn({type error}, axum::Json<Product>) -> impl Future<Output = Result<axum::Json<bool>, axum::http::StatusCode>> {add_product}: Handler<_, _>
